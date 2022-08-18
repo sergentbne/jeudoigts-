@@ -1,8 +1,8 @@
 #include <iostream>
 using namespace std;
+#include <unistd.h>
 int main() {
-	string brother;
-	getline(cin,brother);
-	cout << brother << endl;
+	sleep(5);
+	cout << "hey";
 }	
 	
