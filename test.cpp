@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
 #include <unistd.h>
+/* les variables */
+
 int main() {
 	struct {
 	int main0 = 1;
@@ -18,7 +20,7 @@ int main() {
 	getline(cin,j2.nom);
 	j1.win = false;
 	j2.win = false;
-
+//set le tous
 	while (j1.win == false && j2.win == false) 
 	{
 		cout << "joueur 1, ta premiere main a " << j1.main0 << " et la deuxieme a " << j1.main1 << endl;
@@ -40,12 +42,13 @@ int main() {
 			default:
 			break;
 		}
+//verification de la main
 		cout << "avec quelle main? (1 pour main 1 et 2 pour main 2)\n";
 		cin >> j1.mainattak;
 		switch (j1.mainattak)
 		{
 			case 1:
-				if (j1.main0 >= 5) {
+					if (j1.main0 >= 5) {
 					cout << "cette main est invalide, tu vas donc manquer ton tour\n";
 					j1.attak = 0;
 				} 
@@ -61,14 +64,14 @@ int main() {
 		{
 		case 1:
 			if(j1.mainattak == 1){j1.main0 += j2.main0;}
-			else {j1.main1 =+ j2.main0;}
+			else {j1.main1 += j2.main0;}
 			if (j2.main0 >= 5 && j2.main1 >= 5) {
 				j1.win =true;
 			}
 			break;
 		case 2:
 			if(j1.mainattak == 2){j1.main0 += j2.main1;}
-			else {j1.main1 =+ j2.main1;}
+			else {j1.main1 += j2.main1;}
 			if (j2.main0 >= 5 && j2.main1 >= 5) {
 				j1.win =true;}
 			break;
@@ -119,14 +122,14 @@ int main() {
 		{
 		case 1:
 			if(j2.mainattak == 1){j2.main0 += j1.main0;}
-			else {j2.main1 =+ j1.main0;}
+			else {j2.main1 += j1.main0;}
 			if (j1.main0 >= 5 && j1.main1 >= 5) {
 				j2.win =true;
 			}
 			break;
 		case 2:
 			if(j2.mainattak == 2){j2.main0 += j1.main1;}
-			else {j2.main1 =+ j1.main1;}
+			else {j2.main1 += j1.main1;}
 			if (j1.main0 >= 5 && j1.main1 >= 5) {
 				j2.win =true;}
 			break;
